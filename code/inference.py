@@ -120,7 +120,7 @@ class Inference:
                 sum_psnr += sum(total_psnr[k])
                 sum_ssim += sum(total_ssim[k])
                 n_img += len(total_psnr[k])
-            self.logger.write_log("# Total AVG-PSNR={:.5}, AVG-SSIM={:.4}".format(sum_psnr / n_img, sum_ssim / n_img))
+            self.logger.write_log("# Total AVG-PSNR={:.5}, AVG-SSIM={:.4}".format(sum_psnr / max(n_img,1), sum_ssim / max(n_img,1)))
 
     def gene_seq(self, img_list, n_seq):
         if self.border:
